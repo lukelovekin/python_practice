@@ -23,7 +23,6 @@ def check_nums(num1, num2):
         print("2 numbers not entered")
         return False
 
-    # attempt at python ternary
     # return True if (num1 + num2).isdigit() else False
     
 
@@ -34,8 +33,7 @@ def check_operator(operator):
         print("an operator was not picked")
         return False
 
-    # attempt at python ternary
-    # return True if operator != ("*" or "/" or "+" or "-") else False
+    # return operator if operator != ("*" or "/" or "+" or "-") else False
 
 
 operators = {
