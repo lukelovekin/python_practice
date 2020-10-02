@@ -97,3 +97,55 @@
 
 
 # ========== HANGMAN ==========
+import getpass
+
+def hangman():
+    print("Welcome to hangman")
+
+    # Hangman picture
+    hangman = [
+        ["       ____       "],  # [0]
+        ["      |    |      "],  # [1]
+        ["      | ", " O      "],  # [2][0] - [2][1]
+        ["      |", " /", "|", "\     "],  # [3][0] - [3][3]
+        ["      | ", "/", " \     "],  # [4][0] - [4][2]
+        ["   ___|___        "],  # [5][0] - [5][3]
+        ["                  "]  # [6][0]        
+    ]
+
+    # print hangman pic on welcome
+    for pic in range(0, len(hangman)):
+        print(hangman[pic][0])
+
+    word = getpass.getpass("Pick a word for others to guess, (keep it a secret):  ")
+
+    # check for one word only
+    if len(word.split(" ")) > 1:
+        word = getpass.getpass("Please try again, Pick \"One\" word for others to guess, (keep it a secret)")
+
+    lst = list(word)
+    empty = []
+    
+    # display empty letters
+    for letter in lst:
+        empty.append("_ ")
+    
+    print("".join(empty))
+
+    guesses = 0
+
+    # 6 wrong guesses will Lose
+    while guesses < 7:
+        letter = input("Choose one letter to guess the word :")
+
+        if len(letter) > 1:
+            letter = input("Choose ONE letter to guess the word :")
+        
+        if letter in lst:
+            #show letter in the blanks and continue while loop
+        else:
+            #show a picture from the hangman and add to numver of guesses
+
+
+
+hangman()
